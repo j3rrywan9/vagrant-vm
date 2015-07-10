@@ -3,7 +3,7 @@
 ## Installation
 
 ### Vagrant
-(http://www.vagrantup.com/downloads)
+http://www.vagrantup.com/downloads
 
 ### VirtualBox
-(https://www.virtualbox.org/wiki/Downloads)
+https://www.virtualbox.org/wiki/Downloads

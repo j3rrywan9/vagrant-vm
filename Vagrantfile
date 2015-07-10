@@ -24,8 +24,11 @@ Vagrant.configure(2) do |config|
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine. In the example below,
   # accessing "localhost:8080" will access port 80 on the guest machine.
+
+  # Disable default forwarded port for SSH, customize it.
   config.vm.network "forwarded_port", guest: 22, host: 2222, id: "ssh", disabled: true
   config.vm.network "forwarded_port", guest: 22, host: 3333
+  # Create additional forwarded ports.
   config.vm.network "forwarded_port", guest: 5000, host: 5000
   config.vm.network "forwarded_port", guest: 8000, host: 8000
 
@@ -53,10 +56,10 @@ Vagrant.configure(2) do |config|
   #   vb.gui = true
   #
     vb.customize ["modifyvm", :id,
-	              "--natdnshostresolver1", "on"
-				  ]
-	vb.cpus = 2
-	# Customize the amount of memory on the VM:
+                  "--natdnshostresolver1", "on"
+                 ]
+    vb.cpus = 2
+    # Customize the amount of memory on the VM:
     vb.memory = "4096"
   end
   #
