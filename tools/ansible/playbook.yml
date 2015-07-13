@@ -1,0 +1,13 @@
+---
+- hosts: all
+  tasks:
+  - name: Run apt-get update
+    apt:
+      update_cache=yes
+      cache_valid_time=600
+
+  - name: git client | Install git and dependencies
+    apt:
+      name=git
+      state=installed
+
