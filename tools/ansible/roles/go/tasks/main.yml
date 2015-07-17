@@ -1,0 +1,14 @@
+---
+- name: Download Go binary distribution
+  get_url:
+    url=https://storage.googleapis.com/golang/go{{ version }}.{{ os }}-{{ arch }}.tar.gz
+    dest=/root
+
+- name: Untar Go binary distribution 
+  command: sudo /bin/tar -C /usr/local -xzf go{{ version }}.{{ os }}-{{ arch }}.tar.gz
+
+- name: Add /usr/local/go/bin to the PATH environment variable
+  lineinfile:
+    dest="/home/vagrant/.profile"
+    line="export PATH=$PATH:/usr/local/go/bin"
+
